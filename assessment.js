@@ -1,6 +1,6 @@
 'use strict';
 const userNameInput = document.getElementById('user-name');
-const assesmentButton = document.getElementById('assesment');
+const assessmentButton = document.getElementById('assessment');
 const resultDivided = document.getElementById('result-area');
 const tweetDivided = document.getElementById('tweet-area');
 
@@ -14,7 +14,7 @@ function removeAllChildren(element) {
     }
 }
 
-assesmentButton.onclick = () => {
+assessmentButton.onclick = () => {
     const userName = userNameInput.value;
     if (userName.length === 0) { // 名前が空のときは処理を終了する
         return;
@@ -27,7 +27,7 @@ assesmentButton.onclick = () => {
     resultDivided.appendChild(header);
 
     const paragraph = document.createElement('p');
-    const result = assesment(userName);
+    const result = assessment(userName);
     paragraph.innerText = result;
     resultDivided.appendChild(paragraph);
 
@@ -79,7 +79,7 @@ userNameInput.onkeydown = (event) => {
  * @param {string} userName ユーザーの名前
  * @return {string} 診断結果
  */
-function assesment(userName) {
+function assessment(userName) {
     // 全文字のコード番号を取得してそれを足し合わせる
     let sumOFCharCode = 0;
     for (let i = 0; i < userName.length; i++) {
